@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>徐州</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+		}
+		.clear:after{
+			content: "";
+			height: 0;
+			display: block;
+			clear: both;
+		}
+		#head-top{
+			height: 45px;
+			border-bottom: 1px solid #aaacb0;
+			position: relative;
+		}
+		#form{
+			display: inline-block;
+			position: absolute;
+			right: 275px;
+			width: 110px;
+		}
+
+		#head-top #form input{
+			width: 100px;
+			display: inline-block;
+
+		}
+		#head-top ul{
+			
+			right: 50px;
+			display: inline-block;
+			position: absolute;
+			bottom: 10px;
+			
+		}
+		#head-top li{
+			display: inline-block;
+		}
+		#head-top a{
+			text-decoration: none;
+			color: black;
+			list-style: none;
+		}
+		#QQ{
+			background: url(img/景点/QQ.jpg) no-repeat  left center;
+			padding-left: 20px;
+			margin-left: 20px;
+
+		}
+		#weixin {
+    		padding-left: 20px;
+    		margin-left: 20px;
+   			background: url(img/景点/微信.jpg) no-repeat left center;
+		}
+		
+		#head-logo{
+			width: 200px;
+			height: 180px;
+			float: left;
+		}
+		#head{
+			width: 1200px;
+			margin: 0 auto;
+			
+		}
+		.form{
+			width: 411px;
+			height: 38px;
+			margin-top: 100px;
+			float: right;
+			margin-left: 130px;
+			vertical-align: bottom;
+			
+		}
+		
+		.search{
+			width:70px;
+			height:15px;
+			padding: 12px 271px 11px 18px;
+			border: 1px solid #00A4FF;
+			float: left;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(191,191,191,1);
+		}
+
+		.submit{
+			width: 50px;
+			height: 40px;
+			background: rgba(0,164,255,1) url(img/景点/fa-search.png) no-repeat center center;
+			float: left;
+			border: 1px solid #00A4FF;
+		}
+		#nav-1{
+			display: inline-block;
+			margin-left:  50px;
+			margin-top: 100px;
+			width: 400px;
+		}
+		#nav-1 li{
+			display: inline-block;
+			padding: 0px 25px;
+			padding-bottom: 15px;
+			float: left;
+		}
+		#nav-1 a{
+			text-decoration: none;
+			color: #555;
+			font-size: 20px;
+		}
+		#nav-1 li:hover{
+			border-bottom: 2px solid rgba(0,164,255,1);
+			color: rgba(0,164,255,1);
+		}
+		
+		#banner{
+			background: url(img/景点/banner2.jpg) no-repeat;
+			width: 868px;
+			height: 449px;
+			margin: 0 auto;
+		}
+		#background{
+			background-color: #98dff3;
+			position: relative;
+		}
+		
+		#nav-2 p{
+			display: inline-block;
+			font-size: 20px;
+			padding-left: 40px;
+			font-weight: bold;
+
+		}
+		#nav-2-right a{
+			text-decoration: none;
+			color: #555;
+			font-size: 14px;
+		}
+		#nav-2-right li{
+			display: inline-block;
+			width: 120px;
+			border-right: 1px solid #BEBEBEFF;
+			text-align: center;
+			line-height: 14px;
+		}
+		#nav-2-right{
+			display: inline-block;
+			margin-left: 250px;
+		}
+		#nav-2-right #first a{
+			color: rgba(0,164,255,1);
+		}
+		#nav-2-right #last{
+			border: none;
+		}
+		#nav-2{
+			width: 1200px;
+			height: 20px;
+			margin: 0 auto;
+			background:rgba(255,255,255,1);
+			box-shadow:0px 2px 2px 0px rgba(118,118,118,0.2);
+			margin: 0 auto;
+			padding-top: 21px;
+			padding-bottom: 21px;
+			margin-bottom: 21px;
+		}
+		.prev,
+		.next {
+    		width: 106px;
+    		height: 106px;
+    		position: absolute;
+    		top: 147px;
+    		left: 5%;
+		}
+
+		.next {
+    		left: auto;
+    		right: 5%;
+		}
+		#scenicspot{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.scenicspot-img img{
+			width: 290px;
+			height: 180px;
+		}
+		.scenicspot-img li{
+			display: inline-block;
+			height: 300px;
+			box-shadow:0px 2px 4px 0px rgba(118,118,118,0.5);
+			float: left;
+			margin-right: 13px;
+			margin-bottom: 13px;
+			background-color: rgba(144,220,244,0.3);
+		}
+
+		.scenicspot-img .last{
+			margin: 0;
+		} 
+		.scenicspot-img .name{
+			font-weight: bold;
+			margin-left: 25px;
+			line-height: 25px;
+			font-size: 20px;
+		}
+		.scenicspot-img .ticket{
+			margin-left: 25px;
+		}
+		.scenicspot-img .time{
+			margin-left: 25px;
+			line-height: 25px;
+		}
+		.scenicspot-img .review{
+			font-size: 12px;
+			color: #999;
+			margin-left: 25px;
+			line-height: 25px;
+		}
+		.scenicspot-img .ticket span{
+			font-size: 25px;
+			color: black;
+			font-weight: bold;
+		
+		}
+		#nav-3 p{
+			display: inline-block;
+			font-size: 20px;
+			padding-left: 40px;
+			font-weight: bold;
+
+		}
+		#nav-3-right a{
+			text-decoration: none;
+			color: #555;
+			font-size: 14px;
+		}
+		#nav-3-right li{
+			display: inline-block;
+			width: 120px;
+			text-align: center;
+			line-height: 14px;
+		}
+		#nav-3-right{
+			display: inline-block;
+			margin-left: 500px;
+		}
+		#nav-3-right #first a{
+			color: rgba(0,164,255,1);
+		}
+		#nav-3{
+			width: 1200px;
+			height: 30px;
+			line-height: 30px;
+			margin: 0 auto;
+			background:rgba(255,255,255,1);
+			box-shadow:0px 2px 2px 0px rgba(118,118,118,0.2);
+			padding-top: 21px;
+			padding-bottom: 21px;
+			margin-bottom: 21px;
+		}
+		.food-img img{
+			width: 286px;
+			height: 200px;
+		}
+		.food-img li{
+			display: inline-block;
+			float:left;
+			margin-right: 13px;
+			margin-bottom: 13px;
+			list-style: none;
+			box-shadow:0px 2px 4px 0px rgba(118,118,118,0.5);
+			position: relative;
+		}
+		.food-img li .last{
+			margin: 0;
+		}
+		#food{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.food-img .name{
+			position: absolute;
+			width: 286px;
+			height: 30px;
+			bottom: 0px;
+			left: 0px;
+			background: rgba(0,0,0,0.3);
+		}
+		.food-img h2{
+			color: white;
+			padding-left: 70px;	
+		}
+		#nav-4 p{
+			display: inline-block;
+			font-size: 20px;
+			padding-left: 40px;
+			font-weight: bold;
+
+		}
+		#nav-4-right a{
+			text-decoration: none;
+			color: #555;
+			font-size: 14px;
+		}
+		#nav-4-right li{
+			display: inline-block;
+			width: 120px;
+			text-align: center;
+			line-height: 14px;
+		}
+		#nav-4-right{
+			display: inline-block;
+			margin-left: 500px;
+		}
+		#nav-4{
+			width: 1200px;
+			height: 20px;
+			margin: 0 auto;
+			background:rgba(255,255,255,1);
+			box-shadow:0px 2px 2px 0px rgba(118,118,118,0.2);
+			margin: 0 auto;
+			padding-top: 21px;
+			padding-bottom: 21px;
+			margin-bottom: 21px;
+		}
+		#nav-4-right #first a{
+			color: rgba(0,164,255,1);
+		}
+
+		#celebrity>div{
+			float: left;
+		}
+		.historic{
+			width: 280px;
+			height: 220px;
+		}
+		.right{
+			margin-right: 9px;
+			margin-bottom: 8px;
+			position: relative;
+		}
+		.left{
+			margin-right: 3px;
+			position: relative;
+		}
+
+		#celebrity{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		#celebrity .last{
+			margin-right: 0;
+		}
+		#recommendation-left{
+			position: absolute;
+			padding-left: 30px;
+			padding-right: 30px;
+			width: 270px;
+			bottom: 0px;
+			left: 0px;
+			color: white;
+			background: rgba(0,0,0,0.3);
+		}
+
+		.recommendation-right{
+			position: absolute;
+			padding-left: 15px;
+			padding-right: 10px;
+			width: 255px;
+			bottom: 0px;
+			left: 0px;
+			color: white;
+			background: rgba(0,0,0,0.3);
+		}
+		#bottom #left{
+			display: inline-block;
+			position: absolute;
+			top: 20px;
+			padding-left: 20px;
+		}
+		#bottom #left img{
+			width: 180px;
+			height: 180px;
+		}
+		#bottom #middle{
+			display: inline-block;
+			position: absolute;
+			top: 20px;
+			left: 500px;
+		}
+		#bottom #right{
+			display: inline-block;
+			position: absolute;
+			top: 20px;
+			left: 950px;
+		}
+        #bottom{
+        	
+        	width: 1200px;
+        	height: 240px;
+        	margin: 0 auto;
+        	position: relative;
+        	margin-top: 20px;
+            background-color: rgba(144,220,244,0.3);
+        }
+        #bottom a{
+        	color: #555;
+        	text-decoration: none;
+		}
+
+		#bottom li{
+			list-style: none;
+			line-height: 25px;
+		}
+		#version{
+			font-weight: bold;
+			font-size: 20px;
+			bottom: 10px;
+			left: 580px;
+			color: white;
+			height: 100px;
+			line-height: 100px;
+			background-color: black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="head-top" class="clear">
+		<form id="form">
+	     	<input type = "text" name = "username" value = "用户名" />
+	     	<br/>
+	     	<input type = "password" name = "password" value = "密码" />
+	    </form>
+		<ul>
+			<li><a href="">登录/注册</a></li>
+			<li id="QQ"><a href="#">QQ</a></li>
+			<li id="weixin"><a href="#">微信</a></li>
+		</ul>
+	</div>
+	<div id="head" class="clear">
+		<img src="img/景点/logo.jpg" id="head-logo">
+		<ul id="nav-1" class="clear">
+			<li><a href="#">简介</a></li>
+			<li><a href="#">景点</a></li>
+			<li><a href="#">美食</a></li>
+			<li><a href="#">人文风俗</a></li>
+		</ul>
+   		<form class="form clear">
+	        <input type="text" placeholder="输入关键词" class="search" />
+	        <input type="button" class="submit"/>
+	    </form>
+	</div>
+	<div id="background">
+		<img src="img/景点/prev.png" alt="上一页" class="prev" />
+        <img src="img/景点/next.png" alt="下一页" class="next" />
+		<div id="banner">
+		</div>
+	</div>
+	<div id="nav-2">
+		<p>热门景点推荐</p>
+		<ul id="nav-2-right">
+			<li id="first"><a href="#">夏日戏水榜</a></li>
+			<li><a href="#">情侣出行榜</a></li>
+			<li><a href="#">城市地标榜</a></li>
+			<li><a href="#">好评推荐榜</a></li>
+			<li><a href="#">博物之旅榜</a></li>
+			<li id="last"><a href="#">户外拓展榜</a></li>
+		</ul>
+	</div>
+	<div id="scenicspot">
+		<ul class="scenicspot-img clear">
+			<li><img src="img/景点/云龙湖.jpg" alt="">
+				<p class="name">云龙湖</p>
+				<p class="ticket">门票：<span>￥100起</span>/人</p>
+				<p class="time">开放时间：全天开放</p>
+				<p class="review">•937条评论</p>
+			</li>
+			<li><img src="img/景点/加勒比水世界.jpeg" alt="">
+				<p class="name">加勒比水世界</p>
+				<p class="ticket">门票：<span>￥135.5起</span>/人</p>
+				<p class="time">开放时间：09:00-21:00</p>
+				<p class="review">•1629条评论</p>
+			</li>
+			<li><img src="img/景点/龟山汉墓.jpg" alt="">
+				<P class="name">龟山汉墓</P>
+				<p class="ticket">门票：<span>￥67起</span>/人</p>
+				<p class="time">开放时间:08:00-17:30</p>
+				<p class="review">•800条评论</p>
+			</li>
+			<li class="last"><img src="img/景点/欢乐世界.jpg" alt="">
+				<p class="name">欢乐世界</p>
+				<p class="ticket">门票：<span>￥198起</span>/人</p>
+				<p class="time">开放时间:09:00-17:00</p>
+				<p class="review">•859条评论</p>
+			</li>
+		</ul>
+		<ul class="scenicspot-img clear">
+			<li><img src="img/景点/窑湾古镇.jpg" alt="">
+				<p class="name">窑湾古镇</p>
+				<p class="ticket">门票：<span>￥1.8起</span>/人</p>
+				<p class="time">开放时间:09:00-17:00</p>
+				<p class="review">•1149条评论</p>
+			</li>
+			<li><img src="img/景点/徐州大景山滑雪场.jpg" alt="">
+				<p class="name">徐州大景山滑雪场</p>
+				<p class="ticket">门票：<span>暂无</span></p>
+				<p class="time">开放时间：09:00-18:00</p>
+				<p class="review">•249条评论</p>
+			</li>
+			<li><img src="img/景点/狮子山楚王陵.jpg" alt="">
+				<p class="name">狮子山楚王陵</p>
+				<p class="ticket">门票:<span>￥80起</span>/人</p>
+				<p class="time">开放时间:08:30-17：30</p>
+				<p class="review">•124条评论</p>
+			</li>
+			<li class="last"><img src="img/景点/徐州乐园糖果世界.jpg" alt="">
+				<p class="name">徐州乐园糖果世界</p>
+				<p class="ticket">门票：<span>￥37.5起</span>/人</p>
+				<p class="time">开放时间：09:00-17:00</p>
+				<p class="review">•963条评论</p>
+			</li>
+		</ul>
+	</div>
+	<div id="nav-3">
+		<p>热门美食推荐</p>
+		<ul id="nav-3-right">
+			<li id="first"><a href="#">硬菜合集</a></li>
+			<li><a href="#">传统美食</a></li>
+			<li><a href="#">饭后甜点</a></li>
+			<li><a href="#">风味小吃</a></li>
+		</ul>
+	</div>
+	<div id="food">
+		<ul class="food-img clear">
+			<li><img src="img/美食/地锅鸡.jpg" alt="">
+				<div class="name">
+					<h2>地锅鸡</h2>
+				</div>
+			</li>
+			<li><img src="img/美食/东坡回赠肉.png" alt="">
+				<div class="name">
+					<h2>东坡回赠肉</h2>
+				</div>
+			</li>
+			<li><img src="img/美食/羊方藏鱼.jpg" alt="">
+				<div class="name">
+					<h2>羊方藏鱼</h2>
+				</div>
+			</li>
+			<li><img src="img/美食/霸王别姬.jpg" alt="" class="last">
+				<div class="name">
+					<h2>霸王别姬</h2>
+				</div>
+			</li>
+		</ul>
+		<ul class="food-img clear">
+			<li><img src="img/美食/徐州烙馍.jpg" alt="">
+				<div class="name">
+					<h2>徐州烙馍</h2>
+				</div>
+			</li>
+			<li><img src="img/美食/把子肉.jpg" alt="">
+				<div class="name">
+					<h2>把子肉</h2>
+				</div>
+			</li>
+			<li><img src="img/美食/蜜汁地瓜.png" alt="">
+				<div class="name">
+					<h2>蜜汁地瓜</h2>
+				</div>
+			</li>
+			<li><img src="img/美食/饣它汤.png" alt="" class="last">
+				<div class="name">
+					<h2>饣它汤</h2>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div id="nav-4">
+		<p>人文风俗</p>
+		<ul id="nav-4-right">
+			<li id="first"><a href="#">名人介绍</a></li>
+			<li><a href="#">风俗</a></li>
+			<li><a href="#">礼节</a></li>
+			<li><a href="#">传统文化</a></li>
+		</ul>
+
+	</div>
+	<div id="celebrity" class="clear">
+		<div class="left">
+			<a href="https://baike.baidu.com/item/%E6%9D%8E%E5%8F%AF%E6%9F%93/331468?fr=aladdin">
+				<img src="img/名人推荐/李可柒.jpg" id="mordern"></a>
+			<div id="recommendation-left">
+				<h2 id="name-left">李可染（现代）</h2>
+				<p id="specific-left">中国近代杰出的画家、诗人，画家齐白石的弟子。代表画作有《漓江胜景图》《万山红遍》《井冈山》等。代表画集有《李可染水墨写生画集》《李可染中国画集》《李可染画牛》等。</p>
+			</div>
+		</div>
+		<div class="right">
+			<a href="https://baike.baidu.com/item/%E5%BD%AD%E7%A5%96/356366?fr=aladdin">
+				<img src="img/名人推荐/彭祖.jpg" class="historic"></a>
+			<div class="recommendation-right">
+				<h3 class="name-right">彭祖(先秦)</h3>
+				<p class="specific-right">彭祖，大彭国第一任国君。彭姓始祖，又称篯铿、彭铿，陆终第三子。被庄子称为：“彭祖得之，上及有虞，下及五伯。”</p>
+			</div>
+		</div>
+		<div class="right">
+			<a href="https://baike.baidu.com/item/%E5%88%98%E9%82%A6/129493?fr=aladdin">
+				<img src="img/名人推荐/刘邦.jpg" class="historic"></a>
+			<div class="recommendation-right">
+				<h3 class="name-right">刘邦（西汉）</h3>
+				<p class="specific-right">刘邦，字季。中国历史上杰出的政治家、战略家和军事指挥家，汉朝开国皇帝，汉民族和汉文化的伟大开拓者之一。</p>
+			</div>
+		</div>
+		<div class="right last">
+			<a href="https://baike.baidu.com/item/%E9%A1%B9%E7%BE%BD/7005?fr=aladdin">
+				<img src="img/名人推荐/项羽.jpg" class="historic"></a>
+			<div class="recommendation-right">
+				<h3 class="name-right">项羽（楚）</h3>
+				<p class="specific-right">项羽，周王族姬姓项国后代项氏，名籍，字羽。秦朝末年起义军领袖、杰出军事家，楚国名将项燕之孙。</p>
+			</div>
+		</div>
+		<div class="right">
+			<a href="https://baike.baidu.com/item/%E5%AD%99%E6%9D%83/17337?fr=aladdin">
+				<img src="img/名人推荐/孙权.jpg" class="historic"></a>
+			<div class="recommendation-right">
+				<h3 class="name-right">孙权（三国）</h3>
+				<p class="specific-right">吴大帝孙权字仲谋。三国时期孙吴的建立者。善书，唐代张怀瓘在《书估》中将其书法列为第三等。</p>
+			</div>
+		</div>
+		<div class="right">
+			<a href="https://baike.baidu.com/item/%E6%9D%8E%E7%85%9C/7831?fr=aladdin">
+				<img src="img/名人推荐/李煜.jpg" class="historic"></a>
+			<div class="recommendation-right">
+				<h3 class="name-right">李煜（南唐末）</h3>
+				<p class="specific-right">李煜，南唐末代国君。精书法、工绘画、通音律，诗文均有一定造诣，尤以词的成就最高。</p>
+			</div>
+		</div>
+		<div class="right last">
+			<a href="https://baike.baidu.com/item/%E5%BC%A0%E9%81%93%E9%99%B5/1707760?fr=aladdin">
+				<img src="img/名人推荐/张道陵.jpg" class="historic"></a>
+			<div class="recommendation-right">
+				<h3 class="name-right">张道陵（东汉）</h3>
+				<p class="specific-right">张道陵，字辅汉，原名陵，道教创始人。后世尊称为“老祖天师”、“正一真人”、张天师……
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="bottom">
+		<div id="left">
+			<h2>徐州旅游攻略公众号</h2>
+			<img src="img/景点/二维码.jpg">
+		</div>
+		<div id="middle">
+			<h3 id="right-1">关于徐州旅游攻略网</h3>
+			<ul id="right-2">
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">隐私政策</a></li>
+				<li><a href="#">商标声明</a></li>
+				<li><a href="#">服务协议</a></li>
+				<li><a href="#">网络信息侵权通知指引</a></li>
+				<li><a href="#">服务监督指导员</a></li>
+				<li><a href="#">网站地图</a></li>
+			</ul>
+		</div>
+		<div id="right">
+			<h3  id="right-3">旅行服务</h3>
+			<ul id="right-4">
+				<li><a href="">旅游特价</a></li>
+				<li><a href="">酒店预订</a></li>
+				<li><a href="">旅游问答</a></li>
+				<li><a href="">旅游保险</a></li>
+				<li><a href="">交通服务</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="version">徐州旅游攻略网、2020-2021版权所有</div>
+</body>
+</html>
